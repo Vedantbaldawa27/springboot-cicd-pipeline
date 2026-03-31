@@ -1,17 +1,17 @@
-# Use official Java image
-FROM eclipse-temurin:17-jdk
+# ---------- BUILD STAGE ----------
+FROM maven:3.9.9-eclipse-temurin-17 AS build
 
-# Set working directory
 WORKDIR /app
 
-# Copy all project files
 COPY . .
 
-# Give permission to mvnw
-RUN chmod +x mvnw
+RUN mvn clean package -DskipTests
 
-# Build the application
-RUN ./mvnw clean package
+# ---------- RUN STAGE ----------
+FROM eclipse-temurin:17-jdk
 
-# Run the app
-CMD ["java", "-jar", "target/*.jar"]
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
