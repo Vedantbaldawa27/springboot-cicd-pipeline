@@ -1,3 +1,17 @@
+# Use official Java image
 FROM eclipse-temurin:17-jdk
-COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+
+# Set working directory
+WORKDIR /app
+
+# Copy all project files
+COPY . .
+
+# Give permission to mvnw
+RUN chmod +x mvnw
+
+# Build the application
+RUN ./mvnw clean package
+
+# Run the app
+CMD ["java", "-jar", "target/*.jar"]
