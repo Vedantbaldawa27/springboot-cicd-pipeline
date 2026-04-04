@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
+    <title>Welcome</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .login {
+            background: #00c6ff;
+        }
+
+        .register {
+            background: #ff7eb3;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            opacity: 0.6;
+        }
+    </style>
 </head>
-<body style="text-align:center; font-family:sans-serif;">
-<h1>Welcome 🚀</h1>
-<a href="/login">Login</a> |
-<a href="/register">Register</a>
+<body>
+
+<div class="container">
+    <h1>🚀 Welcome</h1>
+    <p>Simple Login & Registration System</p>
+
+    <a href="/login" class="btn login">Login</a>
+    <a href="/register" class="btn register">Register</a>
+
+    <footer>
+        Made by Chaitanya ✨
+    </footer>
+</div>
+
 </body>
 </html>
