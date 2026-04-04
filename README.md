@@ -108,6 +108,21 @@ http://<EC2_PUBLIC_IP>:8080
 
 ---
 
+## 🎥 Demo Video
+
+👉 Click below to watch the live demo of the project:
+
+🔗 [Watch Demo Video](https://drive.google.com/file/d/1R0geif3B0dyjyH032L_xVWbFq7s9wsUw/view?usp=sharing)
+
+---
+
+## 🌐 Live Application
+
+👉 Access the deployed application here:
+
+http://EC2_PUBLIC_IP:8080
+
+
 ## 🎯 Learning Outcomes
 
 * Understanding CI/CD pipelines
@@ -118,7 +133,7 @@ http://<EC2_PUBLIC_IP>:8080
 
 ---
 
-## 🗣️ Interview Explanation
+## 🗣️ 
 
 "I implemented a CI/CD pipeline using GitHub and AWS CodeBuild for continuous integration, and a pull-based deployment strategy on EC2 using Docker for continuous deployment."
 
