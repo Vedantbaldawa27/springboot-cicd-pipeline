@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Welcome</title>
     <style>
@@ -15,45 +15,55 @@
 
         .container {
             background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
+            padding: 50px;
             border-radius: 20px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             text-align: center;
             color: white;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            width: 350px;
         }
 
         h1 {
             margin-bottom: 10px;
+            font-size: 28px;
         }
 
         p {
-            opacity: 0.8;
-            margin-bottom: 30px;
+            opacity: 0.85;
+            margin-bottom: 25px;
         }
 
         .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 25px;
-            border-radius: 30px;
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            border-radius: 25px;
             text-decoration: none;
             color: white;
             font-weight: bold;
             transition: 0.3s;
+            width: 80%;
         }
 
-        .login {
-            background: #00c6ff;
-        }
-
-        .register {
-            background: #ff7eb3;
-        }
+        .login { background: #00c6ff; }
+        .register { background: #ff7eb3; }
+        .admin { background: #ff4b2b; }
 
         .btn:hover {
             transform: scale(1.05);
             opacity: 0.9;
+        }
+
+        .extra {
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .extra a {
+            color: #fff;
+            text-decoration: underline;
+            opacity: 0.8;
         }
 
         footer {
@@ -66,14 +76,19 @@
 <body>
 
 <div class="container">
-    <h1>🚀 Welcome</h1>
-    <p>Simple Login & Registration System</p>
+    <h1>🚀 Welcome Back</h1>
+    <p>Your personal login system is live</p>
 
     <a href="/login" class="btn login">Login</a>
-    <a href="/register" class="btn register">Register</a>
+    <a href="/register" class="btn register">Create Account</a>
+    <a href="/admin" class="btn admin">Admin Panel</a>
+
+    <div class="extra">
+        <p><a href="#">Forgot Password?</a></p>
+    </div>
 
     <footer>
-        Made by Chaitanya ✨
+        Built with Spring Boot 💻 by Chaitanya
     </footer>
 </div>
 
