@@ -1,26 +1,25 @@
-# 🚀 CI/CD Pipeline for Dockerized Spring Boot Application
+# 🚀 Production-Ready CI/CD Pipeline with REST APIs using Spring Boot, Docker & AWS
 
 ## 📌 Project Overview
 
-This project demonstrates a complete CI/CD pipeline for a Spring Boot application using AWS and Docker. It automates the build and deployment process, ensuring faster and reliable updates.
+This project demonstrates a complete CI/CD pipeline for a Spring Boot application using Docker and AWS. It automates build and deployment, ensuring faster and reliable updates.
 
 ---
 
 ## 🧠 Key Features
 
-* 🔄 Automated build using AWS CodeBuild
-* 🐳 Containerization using Docker
-* ☁️ Cloud deployment on AWS EC2
-* 🔁 Auto deployment using cron-based pull mechanism
-* 🌐 Live application accessible via public IP
+* 🔄 Continuous Integration using AWS CodeBuild
+* 🐳 Docker containerization
+* ☁️ Deployment on AWS EC2
+* 🔁 Automated deployment using cron-based pull mechanism
+* 🌐 RESTful APIs with JSON responses
+* ❤️ Health monitoring endpoint
 
 ---
 
 ## 🏗️ Architecture
 
-```
 Local → GitHub → AWS CodeBuild → EC2 → Docker → Browser
-```
 
 ---
 
@@ -28,8 +27,7 @@ Local → GitHub → AWS CodeBuild → EC2 → Docker → Browser
 
 * Java (Spring Boot)
 * Docker
-* AWS CodeBuild
-* AWS EC2
+* AWS EC2 & CodeBuild
 * Git & GitHub
 
 ---
@@ -37,116 +35,59 @@ Local → GitHub → AWS CodeBuild → EC2 → Docker → Browser
 ## 🔄 Workflow
 
 1. Developer pushes code to GitHub
-2. AWS CodeBuild triggers automatically (CI)
-3. EC2 instance pulls latest code using cron job
-4. Docker rebuilds and redeploys the application
-5. Updated application is available on browser
+2. AWS CodeBuild triggers build (CI)
+3. EC2 instance pulls latest code
+4. Docker rebuilds and redeploys application
+5. Updated application is accessible via browser
 
 ---
 
-## 📂 Project Structure
+## 🔧 Enhancements by Me
 
-```
-cicd-demo/
-├── src/
-├── Dockerfile
-├── buildspec.yml
-├── deploy.sh
-├── pom.xml
-```
+* Designed RESTful APIs with JSON responses
+* Implemented versioned endpoints (`/api/v1`)
+* Added health monitoring (`/health`)
+* Fixed endpoint conflicts and improved routing
+* Optimized Docker configuration
+* Improved deployment script with logs
 
 ---
 
-## 🚀 Setup Instructions
+## 🚀 API Endpoints
 
-### 1️⃣ Clone Repository
+* `/home` → Welcome message
+* `/health` → Service status
+* `/api/v1/info` → App info
+* `/api/v1/time` → Server time
 
-```
-git clone https://github.com/Vivacity5X/cicd-demo.git
-cd cicd-demo
-```
+---
 
-### 2️⃣ Build & Run Locally (Docker)
+## 🧪 Run Locally
 
-```
+```bash
+mvn clean package
 docker build -t cicd-demo .
 docker run -p 8080:8080 cicd-demo
 ```
 
 ---
 
-## ☁️ AWS Deployment
-
-### EC2 Setup
-
-* Launch EC2 instance (Ubuntu)
-* Install Docker
-* Clone repository
-* Run deploy script
-
-### Deploy Script
-
-```
-./deploy.sh
-```
-
----
-
-## 🔁 Auto Deployment (Cron Job)
-
-```
-*/2 * * * * /home/ubuntu/cicd-demo/deploy.sh
-```
-
----
-
-## 🌍 Access Application
-
-```
-http://<EC2_PUBLIC_IP>:8080
-```
-
----
-
-## 🎥 Demo Video
-
-👉 Click below to watch the live demo of the project:
-
-🔗 [Watch Demo Video](https://drive.google.com/file/d/1R0geif3B0dyjyH032L_xVWbFq7s9wsUw/view?usp=sharing)
-
----
-
 ## 🌐 Live Application
 
-👉 Access the deployed application here:
+👉 http://<EC2_PUBLIC_IP>:8080/health
 
-http://EC2_PUBLIC_IP:8080
-
+---
 
 ## 🎯 Learning Outcomes
 
 * Understanding CI/CD pipelines
-* Working with AWS services
+* Working with AWS cloud services
 * Docker containerization
-* Cloud deployment strategies
-* Debugging real-world DevOps issues
+* REST API design
+* Real-world deployment strategies
 
 ---
 
-## 🗣️ 
+## 🗣️ Explanation
 
-"I implemented a CI/CD pipeline using GitHub and AWS CodeBuild for continuous integration, and a pull-based deployment strategy on EC2 using Docker for continuous deployment."
-
----
-
-## 🚀 Future Improvements
-
-* Use AWS ECR for image storage
-* Implement full automated deployment (push-based)
-* Add monitoring using CloudWatch
-
----
-
-## 👨‍💻 Author
-
-Chaitanya Khandare 
+"I designed and deployed a production-like CI/CD pipeline for a Spring Boot application using Docker and AWS, and enhanced it with RESTful APIs and monitoring features."
